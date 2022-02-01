@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 80723151328314947, guid: 6967e96df8b96fc418371723c2068817, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b143f3c52c15cd247acb0d5e10089096, type: 2}
     - target: {fileID: 80723151328314974, guid: 6967e96df8b96fc418371723c2068817, type: 3}
       propertyPath: m_Name
       value: BitDynamic

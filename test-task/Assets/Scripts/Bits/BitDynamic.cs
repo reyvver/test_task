@@ -35,6 +35,7 @@ namespace Bits
         {
             color.a = 255;
             SpriteRenderer.color = color;
+            SpriteRenderer.material.SetColor("_EmissionColor", color);
         }
     
         public void Deactivate()

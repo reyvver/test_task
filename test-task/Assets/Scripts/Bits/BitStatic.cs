@@ -11,6 +11,8 @@ namespace Bits
 
         [SerializeField] private Color32 regularColor;
         [SerializeField] private Color32 activeColor;
+
+        [SerializeField] private ParticleSystem effect;
         public bool Active { get; private set; }
 
         protected override void Init()
@@ -57,11 +59,15 @@ namespace Bits
         private void ChangeBitColor(Color32 color, float time, bool interactable = false)
         {
             SpriteRenderer.DOColor(color, time).OnComplete(()=>SetInteractable(interactable));
+            SpriteRenderer.material.DOColor(color, "_EmissionColor", time);
         }
 
         private void SetInteractable(bool value)
         {
             Active = value;
+            
+            if (value) effect.Play();
+            else effect.Stop();
         }
 
         private void OnBitClicked(Bit bit)
